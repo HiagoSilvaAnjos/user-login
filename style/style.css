@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: arial,sans-serif;
+}
+
+body {
+    background-color: #4b4ba84b;
+}
+
+
+header {
+    text-align: center;
+    font-family: arial,sans-serif;
+    background-color: #9090dd;
+    color: #0b0b63;
+    color: white;
+}
+
+#container {
+    background-color: #6969ee8f;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 3px;
+}
+
+fieldset {
+    border: none;
+}
+
+form {
+    padding: 10px;
+}
+
+/* Nome, Email */
+
+.info {
+   
+    padding: 10px 0px;
+    width: 100%;
+}
+
+.info input {
+    padding: 4px;
+    width: 80%;
+    border-radius: 2px;
+    border: none;
+}
+
+
+/* Escolher área  */
+
+
+.escolhaArea {
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.escolhaArea select {
+    padding: 5px;
+    border-radius: 2px;
+    background-color: rgb(87, 87, 100);
+    color: white;
+    border: none;
+}
+
+
+#check {
+    padding: 10px 0px;
+}
+
+.check input[type="checkbox"] {
+    background-color: red;
+}
