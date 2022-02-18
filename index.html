@@ -18,36 +18,34 @@
         <div class="login-content">
             <!-- caixa dos inputs -->
             <div class="box-inputs">
+                <!-- campo email -->
                 <div class="input-email-container">
-                    <div class="enveloper-icon">
+                    <span class="enveloper-icon">
                         <i class='bx bxs-envelope'></i>
-                    </div>
+                    </span>
                     <input type="email" name="you-email" id="email" placeholder="E-mail">
                 </div>
+                <!-- campo senha -->
                 <div class="input-password-container">
-                    <div class="lock-icon">
+                    <span class="lock-icon">
                         <i class='bx bxs-lock-alt'></i>
-                    </div>
+                    </span>
                     <input type="password" name="you-password" id="password" placeholder="Senha">
-                    <div class="show-password">
+                    <span class="show-password">
                      <i class='bx bxs-show'></i>   
-                    </div>
-                    
+                    </span>
                 </div>
-
             </div>
-            <!-- Enviar e refazer senha -->
-            <p class="link-new-password"><a href="#">Esqueci minha senha</a></p>
-            <button class="button-submit-login">Enviar</button>
+            <!-- Enviar e redefinir senha -->
+            <p><a  class="link-new-password" href="#">Esqueci minha senha</a></p>
+            <button class="button-submit-login" disabled>ENTRAR</button>
         </div>
         <!-- rodapé -->
         <div class="login-footer">
             <p>Não tem uma conta?</p>
-            <span class="link-new-count"><a href="">Registre-se</a></span>
+            <span><a class="link-new-count" href="">Registre-se</a></span>
         </div>
     </div>
-
-
     <script src="./javascript/scripts.js"></script>
 </body>
 
