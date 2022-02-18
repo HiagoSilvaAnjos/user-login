@@ -2,91 +2,53 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulário-Cadastro</title>
-    <link rel="stylesheet" href="./style/style.css" media="screen" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Fazer login</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
 
-    <header>
-        <h1>Cadastro de Devs</h1>
-        <p>Complete suas informações</p>
-        <br>
-    </header>
-
-    <main id="container">
-        <form>
-
-            <fieldset class="grupo">
-                <div class="info">
-                    <label for="nome"><strong>Nome:</strong></label>
-                    <input type="text" name="nome" id="nome" required placeholder="Digite seu nome completo">
+    <div class="login-container">
+        <h1>Faça seu Login</h1>
+        <!-- Conteudo do formulário -->
+        <div class="login-content">
+            <!-- caixa dos inputs -->
+            <div class="box-inputs">
+                <div class="input-email-container">
+                    <div class="enveloper-icon">
+                        <i class='bx bxs-envelope'></i>
+                    </div>
+                    <input type="email" name="you-email" id="email" placeholder="E-mail">
                 </div>
-        
-                <div class="info">
-                    <label for="email"><strong>Email:</strong></label>
-                    <input type="email" name="email" id="email" required placeholder="Digite seu melhor email">
+                <div class="input-password-container">
+                    <div class="lock-icon">
+                        <i class='bx bxs-lock-alt'></i>
+                    </div>
+                    <input type="password" name="you-password" id="password" placeholder="Senha">
+                    <div class="show-password">
+                     <i class='bx bxs-show'></i>   
+                    </div>
+                    
                 </div>
-            </fieldset>
 
-            <div class="escolhaArea">
-                <label for="escolha"><strong>Você é um desenvolvedor:</strong></label>
-                <label>
-                    <input type="radio" name="devweb" id="escolha" value="frontend" checked>Front-end
-                </label>
-                <label>
-                    <input type="radio" name="devweb" value="backend">Back-end
-                </label>
-                <label>
-                    <input type="radio" name="devweb" value="fullstack">Fullstack
-                </label>
             </div>
+            <!-- Enviar e refazer senha -->
+            <p class="link-new-password"><a href="#">Esqueci minha senha</a></p>
+            <button class="button-submit-login">Enviar</button>
+        </div>
+        <!-- rodapé -->
+        <div class="login-footer">
+            <p>Não tem uma conta?</p>
+            <span class="link-new-count"><a href="">Registre-se</a></span>
+        </div>
+    </div>
 
-            <div class="escolhaArea">
-                <label for="senioridade"><strong>Senioridade</strong></label>
-                <select name="senioridade" id="senioridade">
-                    <option selected disabled>Selecione</option>
-                    <option>Júnior</option>
-                    <option>Pleno</option>
-                    <option>Sênior</option>
-                </select>
-            </div>
 
-            <fieldset class="check">
-                <div>
-                    <labe><strong>Selecione as tecnologias que utiliza:</strong></label><br><br>
-                        <input type="checkbox" name="tecnologia1" id="tecnologia1" value="HTML">
-                        <label for="tecnologia1">HTML</label>
-                        <input type="checkbox" name="tecnologia2" id="tecnologia2" value="CSS">
-                        <label for="tecnologia2">CSS</label>
-                        <input type="checkbox" name="tecnologia3" id="tecnologia3" value="JavaScript">
-                        <label for="tecnologia3">JavaScript</label>
-                        <input type="checkbox" name="tecnologia4" id="tecnologia4" value="Node js">
-                        <label for="tecnologia4">Node js</label>
-                        <input type="checkbox" name="tecnologia5" id="tecnologia5" value="React js">
-                        <label for="tecnologia5">React js</label>
-                        <input type="checkbox" name="tecnologia6" id="tecnologia6" value="Mongo DB">
-                        <label for="tecnologia6">Mongo DB</label>
-                        <input type="checkbox" name="tecnologia7" id="tecnologia7" value="Electron">
-                        <label for="tecnologia7">Electron</label>
-                </div>
-            </fieldset>
-
-            <div>
-                <br>
-                <label for="experiencia"><strong>Conte sobre suas experiências:</strong></label>
-                <textarea rows="6" style="width: 80%" name="experiencia" id="experiencia"></textarea>
-            </div>
-
-            <button type="submit" class="buttom">
-                Concluido
-            </button>
-
-        </form>
-    </main>
+    <script src="./javascript/scripts.js"></script>
 </body>
 
 </html>
