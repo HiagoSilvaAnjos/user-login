@@ -13,33 +13,43 @@
 <body>
 
     <div class="login-container">
-        <h1>Faça seu Login</h1>
+        <div class="title">
+            <h1>Faça seu login na plataforma</h1>
+        </div>
+        
+
         <!-- Conteudo do formulário -->
         <div class="login-content">
+
             <!-- caixa dos inputs -->
             <div class="box-inputs">
+
                 <!-- campo email -->
                 <div class="input-email-container">
                     <span class="enveloper-icon">
                         <i class='bx bxs-envelope'></i>
                     </span>
-                    <input type="email" name="you-email" id="email" placeholder="E-mail">
+                    <input type="email" name="you-email" id="email" placeholder="E-mail" autocomplete>
                 </div>
+
+                <!-- mensagem erro emails -->
+                <span id="mensagem-error">Insira um e-mail válido</span>
+
                 <!-- campo senha -->
                 <div class="input-password-container">
                     <span class="lock-icon">
                         <i class='bx bxs-lock-alt'></i>
                     </span>
-                    <input type="password" name="you-password" id="password" placeholder="Senha">
-                    <span class="show-password">
-                     <i class='bx bxs-show'></i>   
-                    </span>
+                    <input type="password" name="you-password" id="password" placeholder="Senha" autocomplete>
+                    <span class="show-password"><i class='bx bxs-show'></i></span>
                 </div>
             </div>
+
             <!-- Enviar e redefinir senha -->
             <p><a  class="link-new-password" href="#">Esqueci minha senha</a></p>
             <button class="button-submit-login" disabled>ENTRAR</button>
         </div>
+        
         <!-- rodapé -->
         <div class="login-footer">
             <p>Não tem uma conta?</p>
