@@ -266,6 +266,10 @@ body {
 }
 
 @media (max-width: 420px) {
+    .login-container {
+        animation: none;
+    }
+
     .title {
         max-width: 400px;
         word-break: break-word;
