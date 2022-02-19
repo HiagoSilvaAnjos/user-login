@@ -23,7 +23,6 @@ const validateLogin = (userEmailElement) => {
     
 }
 
-
 // Adicionar mensagem de erro 
 const showMensageError = () => {
     elementErrorEmail.style.display = "inline-block";

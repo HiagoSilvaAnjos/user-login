@@ -1,0 +1,128 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: arial,sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    background-color: #121214;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forgot-container {
+    background-color: #1b1d1f;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 4px;
+}
+
+.forgot-content h1 {
+    text-align: center;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6em;
+    margin: 20px 0px;
+}
+
+.forgot-content {
+    width: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.forgot-input {
+    background-color: #121214;
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.forgot-input input {
+    border: 2px solid #37373d;
+    border-radius: 4px;
+    color: #cadae7;
+    font-size: 16px;
+    outline: none;
+    padding: 15px 0px;
+    background-color: rgba(255, 255, 255, 0);
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 20px;
+}
+
+.forgot-input input:focus {
+    border: 2px solid #7c58da;
+}
+
+.forgot-input::placeholder {
+    color: rgba(0, 0, 0, 0.507);
+}
+
+.enveloper-icon {
+    position: absolute;
+    top: 17px;
+    left: 12px;
+    color: #3b3939ce;
+    font-size: 20px; 
+}
+
+.box-bnt-forgot {
+    margin: 10px 0px;
+    text-align: center;
+}
+
+.button-forgot {
+    width: 340px;
+    border-radius: 4px;
+    border: none;
+    padding: 15px 15px;
+    background-color: #8256e4;
+    color: #fff;
+    font-weight: bold;
+}
+
+.button-forgot:hover {
+    background-color: #9f81e0;
+}
+
+.link-box {
+    text-align: center;
+}
+
+.link-login {
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    text-decoration: none;
+    color: #858991;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.link-login:hover {
+    text-decoration: underline;
+}
+
+#mensagem-error {
+    display: none;
+    position: relative;
+    font-size: 15px;
+    right: 90px;
+    color: #b9251d;
+    margin-bottom: 7px;
+}
