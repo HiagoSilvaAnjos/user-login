@@ -26,8 +26,19 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #211f25;
+    animation: slideContainer 1s;
 }
 
+@keyframes slideContainer {
+    from {
+        transform: translatex(-60px)
+    }
+    to {
+        transform: translatex(0px)
+    }
+}
+
+/* titulo */
 .title {
     max-width: 400px;
     word-break: break-word;
@@ -54,7 +65,7 @@ body {
 }
 
 /* input email */
-.input-email-container {
+.input-email-container form{
     background-color: #121214;
     position: relative;
     display: flex;
@@ -88,7 +99,7 @@ body {
 
 .enveloper-icon {
     position: absolute;
-    top: 15px;
+    top: 18px;
     left: 10px;
     color: #3b3939ce;
     font-size: 20px; 
@@ -125,7 +136,7 @@ body {
 /* Iconi de cadeado */
 .lock-icon {
     position: absolute;
-    top: 15px;
+    top: 18px;
     left: 10px;
     color: #3b3939ce;
     font-size: 20px; 
@@ -135,7 +146,7 @@ body {
 .show-password {
     cursor: pointer;
     position: absolute;
-    top: 15px;
+    top: 18px;
     right: 10px;
     color: #7c58da;
     font-size: 22px;
@@ -199,6 +210,41 @@ body {
     cursor: pointer;
     background-color: #8256e4;
     color: #efdef7;
+}
+
+/* popup */
+.popup {
+    display: none;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: green;
+    width: 280px;
+    border-radius: 4px;
+    color: #FFF;
+    padding: 20px;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    animation: slideResult 1s;
+}
+
+@keyframes slideResult {
+    from {
+        transform: translatex(60px)
+    }
+    to {
+        transform: translatex(0px)
+    }
+}
+
+.popup-close {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px; 
+}
+
+.popup-close:hover {
+    color: #a59fa0;
 }
 
 /* Media queires */

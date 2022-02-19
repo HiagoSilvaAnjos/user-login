@@ -16,7 +16,6 @@
         <div class="title">
             <h1>Faça seu login na plataforma</h1>
         </div>
-        
 
         <!-- Conteudo do formulário -->
         <div class="login-content">
@@ -25,37 +24,48 @@
             <div class="box-inputs">
 
                 <!-- campo email -->
-                <div class="input-email-container">
-                    <span class="enveloper-icon">
-                        <i class='bx bxs-envelope'></i>
-                    </span>
-                    <input type="email" name="you-email" id="email" placeholder="E-mail" autocomplete>
-                </div>
-
-                <!-- mensagem erro emails -->
-                <span id="mensagem-error">Insira um e-mail válido</span>
-
-                <!-- campo senha -->
-                <div class="input-password-container">
-                    <span class="lock-icon">
-                        <i class='bx bxs-lock-alt'></i>
-                    </span>
-                    <input type="password" name="you-password" id="password" placeholder="Senha" autocomplete>
-                    <span class="show-password"><i class='bx bxs-show'></i></span>
-                </div>
+                    <div class="input-email-container">
+                        <form action="" autocomplete="on">
+                            <span class="enveloper-icon">
+                                <i class='bx bxs-envelope'></i>
+                            </span>
+                            <input type="email" name="you-email" id="email" placeholder="E-mail" autocomplete="on">
+                        </form>
+                    </div>
+                    <!-- mensagem erro emails -->
+                    <span id="mensagem-error">Insira um e-mail válido</span>
+                    <!-- campo senha -->
+                    <div class="input-password-container">
+                        <span class="lock-icon">
+                            <i class='bx bxs-lock-alt'></i>
+                        </span>
+                        <input type="password" name="you-password" id="password" placeholder="Senha" autocomplete>
+                        <span class="show-password"><i class='bx bxs-show'></i></span>
+                    </div>
             </div>
 
             <!-- Enviar e redefinir senha -->
-            <p><a  class="link-new-password" href="./forgot.html">Esqueci minha senha</a></p>
+            <p><a class="link-new-password" href="./forgot.html">Esqueci minha senha</a></p>
             <button class="button-submit-login" disabled>ENTRAR</button>
         </div>
-        
+
         <!-- rodapé -->
         <div class="login-footer">
             <p>Não tem uma conta?</p>
             <span><a class="link-new-count" href="">Registre-se</a></span>
         </div>
     </div>
+
+    <!-- popup -->
+        <div class="popup">
+            <div class="popup-close">
+                X
+            </div>
+            <div class="popup-content">
+                <p>Sucesso!</p>
+            </div>
+        </div>
+
     <script src="./javascript/scripts.js"></script>
 </body>
 

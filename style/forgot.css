@@ -18,6 +18,7 @@ body {
     justify-content: center;
 }
 
+/* container */
 .forgot-container {
     background-color: #1b1d1f;
     width: 400px;
@@ -26,6 +27,25 @@ body {
     justify-content: center;
     flex-direction: column;
     border-radius: 4px;
+    animation: slideContainer 1s;
+}
+
+@keyframes slideContainer {
+    from {
+        transform: translatex(60px)
+    }
+    to {
+        transform: translatex(0px)
+    }
+}
+
+/* conteudo */
+.forgot-content {
+    width: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .forgot-content h1 {
@@ -36,15 +56,7 @@ body {
     margin: 20px 0px;
 }
 
-.forgot-content {
-    width: 340px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-
+/* container do input */
 .forgot-input {
     background-color: #121214;
     position: relative;
@@ -74,14 +86,16 @@ body {
     color: rgba(0, 0, 0, 0.507);
 }
 
+/* íconi */
 .enveloper-icon {
     position: absolute;
-    top: 17px;
+    top: 18px;
     left: 12px;
     color: #3b3939ce;
     font-size: 20px; 
 }
 
+/* Botão recuperar */
 .box-bnt-forgot {
     margin: 10px 0px;
     text-align: center;
@@ -101,10 +115,12 @@ body {
     background-color: #9f81e0;
 }
 
+/* link container */
 .link-box {
     text-align: center;
 }
 
+/* link voltar */
 .link-login {
     font-family: Arial, Helvetica, sans-serif;
     display: inline-block;
@@ -118,6 +134,7 @@ body {
     text-decoration: underline;
 }
 
+/* mensagem de error */
 #mensagem-error {
     display: none;
     position: relative;
@@ -125,4 +142,39 @@ body {
     right: 90px;
     color: #b9251d;
     margin-bottom: 7px;
+}
+
+/* popup */
+.popup {
+    display: none;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: green;
+    width: 280px;
+    border-radius: 4px;
+    color: #FFF;
+    padding: 20px;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    animation: slideResult 1s;
+}
+
+@keyframes slideResult {
+    from {
+        transform: translatex(60px)
+    }
+    to {
+        transform: translatex(0px)
+    }
+}
+
+.popup-close {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px; 
+}
+
+.popup-close:hover {
+    color: #a59fa0;
 }

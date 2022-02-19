@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,25 +9,50 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <title>Recuperar senha</title>
 </head>
+
 <body>
+    <!-- container -->
     <div class="forgot-container">
+
+        <!-- conteudo -->
         <div class="forgot-content">
             <h1>Recuperar senha</h1>
+
+            <!-- container do input email -->
             <div class="forgot-input">
-                <span class="enveloper-icon">
-                    <i class='bx bxs-envelope'></i>
-                </span>
-                <input type="email" name="user-email" id="email" placeholder="Digite seu e-mail">
+                <form autocomplete="on">
+                    <span class="enveloper-icon">
+                        <i class='bx bxs-envelope'></i>
+                    </span>
+                    <input type="email" name="user-email" id="email" placeholder="Digite seu e-mail">
+                </form>
             </div>
+
+            <!-- mensagem de error -->
             <span id="mensagem-error">Insira um e-mail válido</span>
+
+            <!-- butão de recuperar -->
             <div class="box-bnt-forgot">
                 <button class="button-forgot">RECUPERAR</button>
             </div>
+
+            <!-- link de voltar -->
             <div class="link-box">
                 <a class="link-login" href="./index.html">Voltar</a>
             </div>
         </div>
     </div>
+    
+    <!-- popup -->
+    <div class="popup">
+        <div class="popup-close">
+            X
+        </div>
+        <div class="popup-content">
+            <p>Sucesso!</p>
+        </div>
+    </div>
     <script src="./javascript/forgot.js"></script>
 </body>
+
 </html>
