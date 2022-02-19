@@ -178,3 +178,36 @@ body {
 .popup-close:hover {
     color: #a59fa0;
 }
+
+/* media queires */
+
+@media (max-width: 420px) {
+    .forgot-container {
+        width: 95%;
+        animation: none;
+    }
+
+    .forgot-input {
+        width: 95%;
+    }
+
+    .button-forgot {
+        max-width: 320px;;
+    }
+}
+
+@media (max-width: 300px) {
+    .forgot-container {
+        margin-left: 40px;
+        width: 95%;
+        animation: none;
+    }
+
+    .forgot-input {
+        width: 70%;
+    }
+
+    .button-forgot {
+        max-width: 240px;;
+    }
+}
