@@ -14,6 +14,21 @@ const mensageError = () => {
     }
 }
 
+/* mudar a cor do iconi enquanto o input email estiver focado e remove-la quando perder o foco */
+inputEmailElement.addEventListener("focus", () => changeIconColorEmail());
+inputEmailElement.addEventListener("blur", () => removeChangeIconColorEmail());
+
+const changeIconColorEmail = () => {
+    const iconElement = document.getElementById('icon-email');
+    iconElement.style.color = "#7c58da";
+}
+
+// Remover cor do iconi
+const removeChangeIconColorEmail = () => {
+    const iconElement = document.getElementById('icon-email');
+    iconElement.style.color = "#3b3939ce";
+}
+
 // Mostrar popup e fechar popup
 const showPopup = () => {
     popupElement.style.display = 'block';
