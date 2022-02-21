@@ -50,6 +50,35 @@ const relaseButtonSingUp = () => {
 
 }
 
+// evento de foco nos íconis dos inputs Email e Password
+
+// Input email
+userEmailElement.addEventListener('focus', () => changeIconColorEmail());
+userEmailElement.addEventListener('blur', () => removeChangeIconColor());
+
+const changeIconColorEmail = () => {
+    const iconElement = document.getElementById('icon-email');
+    iconElement.style.color = "#7c58da"
+}
+
+const removeChangeIconColor = () => {
+    const iconElement = document.getElementById('icon-email');
+    iconElement.style.color = "#3b3939ce";
+}
+
+// Input Password
+userPasswordElement.addEventListener('focus', () => changeIconColorPassword());
+userPasswordElement.addEventListener('blur', () => removeChangeIconColorPassword());
+
+const changeIconColorPassword = () => {
+    const iconElement = document.getElementById('icon-password');
+    iconElement.style.color = "#7c58da";
+}
+
+const removeChangeIconColorPassword = () => {
+    const iconElement = document.getElementById('icon-password');
+    iconElement.style.color = "#3b3939ce";
+}
 
 // Mudar para senha visível
 let turn = true;
