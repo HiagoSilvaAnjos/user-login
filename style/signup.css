@@ -13,8 +13,11 @@ body {
 
 /* container */
 .signup-container {
-    margin: 5% auto;
-    position: relative;
+    position: absolute;
+    left: 35%;
+    top: 10px;
+    /* left: 50%;
+    transform: translate(-50%, -50%); */
     background-color: #201e25;
     width: 470px;
     display: flex;
@@ -257,6 +260,9 @@ input {
     .signup-container {
         width: 90%;
         animation: none;
+        position: absolute;
+        left: 4%;
+        top: 10px;
     }
 
     .title-content {
