@@ -7,29 +7,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/signup.css">
     <link rel="shortcut icon" href="../assets/Meuicone.ico" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <title>Cadastro</title>
 </head>
 
 <body>
     <div class="signup-container">
-        <h2></h2>
-        <div class="signup-inputs-container">
-            <form action="">
-                <div class="input-email">
-                    <input type="email" name="user-email" id="email">
-                </div>
-                <div class="input-name">
-                    <input type="text" name="user-name" id="name">
-                </div>
-                <div class="input-password">
-                    <input type="password" name="user-password" id="password">
-                </div>
-                <div class="input-confirm-password">
-                    <input type="password" name="user-confirm-password" id="confirm-password">
-                </div>
-            </form>
+        <div class="title-content">
+            <h2>Crie sua conta</h2>
         </div>
-        <a href="./index.html">Voltar para login</a>
+        <form action="" autocomplete="on">
+            <div class="inputs-signup-container">
+                <!-- email -->
+                <div id="input-email">
+                    
+                    <span>
+                        <i class='bx bxs-envelope'></i>
+                    </span>
+                    
+                    <input type="email" name="user-email" id="email" placeholder="Seu E-mail">
+                </div>
+                <!-- nome -->
+                <div id="input-name">
+
+                    <span>
+                        <i class='bx bxs-user'></i>
+                    </span>
+
+                    <input type="text" name="user-name" id="name" placeholder="Seu nome">
+                </div>
+                <!-- senha -->
+                <div id="input-password">
+                    <span>
+                        <i id="icon-lock" class='bx bxs-lock-alt'></i>
+                    </span>
+
+                    <input type="password" name="user-password" id="password" placeholder="Sua senha">
+
+                    <span>
+                        <i id="icon-hide" class='bx bxs-show'></i>
+                    </span>
+                    <!-- <i id="icon-hidde" class='bx bxs-hide'></i> -->
+                </div>
+                <!-- confirmar senha -->
+                <div id="input-confirm-password">
+                    <span>
+                        <i id="icon-lock-password-confirm" class='bx bxs-lock-alt'></i>
+                    </span>
+
+                    <input type="password" name="user-confirm-password" id="confirm-password"
+                        placeholder="Confirme sua senha">
+
+                    <span>
+                        <i id="icon-hide-password-confirm" class='bx bxs-show'></i>
+                    </span>
+                </div>
+                <!-- termo de uso -->
+                <div class="text-user-container">
+                    <span>Ao se registrar, você aceita nossos <a class="links-termos" href="#">termos de uso</a> e<br>a nossa <a class="links-termos" href="#">política de privacidade</a> .</span>
+                </div>
+                <!-- enviar -->
+                <button id="bnt-submit-signup" type="submit">CADASTRAR</button>
+            </div>
+        </form>
+        <a id="link-return-login" href="./index.html"><i class='bx bx-left-arrow-alt'></i>&nbsp;&nbsp;Voltar para
+            login</a>
     </div>
     <script src="./javascript/signup.js"></script>
 </body>

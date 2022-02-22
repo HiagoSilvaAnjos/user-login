@@ -1,0 +1,275 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #131215;
+}
+
+/* container */
+.signup-container {
+    position: relative;
+    background-color: #201e25;
+    width: 470px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 4px;
+    animation: slideContainer 1s;
+}
+
+@keyframes slideContainer {
+    from {
+        transform: translatex(60px)
+    }
+    to {
+        transform: translatex(0px)
+    }
+}
+
+/* container título */
+.title-content {
+    width: 350px;
+    color: #fff;
+    margin: 70px 0px 35px;
+}
+
+/* todos os inputs */
+input {
+    margin-bottom: 10px;
+}
+
+/* container dos inputs */
+.inputs-signup-container {
+    width: 350px;
+}
+
+/* input email */
+#email {
+    color: #fff;
+    border-radius: 4px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    padding: 15px 20px 15px 40px;
+    background-color: #131215;
+    border: 2px solid #131215;
+}
+
+#email:focus {
+    border: 2px solid #7c58da;
+}
+
+/* iconi do input email */
+#input-email {
+    position: relative;
+}
+
+#input-email > span > i {
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    color: #3b3939ce;
+    font-size: 20px; 
+}
+
+/* input name */
+#name {
+    color: #fff;
+    border-radius: 4px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    padding: 15px 20px 15px 40px;
+    background-color: #131215;
+    border: 2px solid #131215; 
+}
+
+/* iconi do input name */
+#input-name {
+    position: relative;
+}
+
+#input-name > span > i {
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    color: #3b3939ce;
+    font-size: 20px; 
+}
+
+/* input password */
+#password {
+    color: #fff;
+    border-radius: 4px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    padding: 15px 40px 15px 40px;
+    background-color: #131215;
+    border: 2px solid #131215; 
+}
+
+/* iconis do input password */
+#input-password {
+    position: relative;
+}
+
+#icon-lock {
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    color: #3b3939ce;
+    font-size: 20px; 
+}
+
+#icon-hide {
+    cursor: pointer;
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    color: #7c58da;
+    font-size: 22px;
+}
+
+/* input confirm password */
+#confirm-password {
+    color: #fff;
+    border-radius: 4px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    padding: 15px 40px 15px 40px;
+    background-color: #131215;
+    border: 2px solid #131215;
+}
+
+/* iconis do input confirm password*/
+#input-confirm-password {
+    position: relative;
+}
+
+#icon-lock-password-confirm {
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    color: #3b3939ce;
+    font-size: 20px; 
+}
+
+#icon-hide-password-confirm {
+    cursor: pointer;
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    color: #7c58da;
+    font-size: 22px;
+}
+
+/* texto de termos de uso */
+.text-user-container {
+    margin: 20px 0px;
+    width: 100%;
+}
+
+.text-user-container > span {
+    font-size: 14px;
+    color: #fff;
+    word-break: break-word;
+}
+
+.links-termos {
+    text-decoration: none;
+    font-weight: bold;
+    color: #5d4a94;
+}
+
+.links-termos:hover {
+    color: #7e65c9;
+}
+
+/* botão */
+#bnt-submit-signup {
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: #8357e4;
+    padding: 16px;
+    border: none;
+    width: 100%;
+    margin: 20px 0px;
+    cursor: pointer;
+}
+
+#bnt-submit-signup:hover {
+    background-color: #9f81e0;
+}
+
+/* link para voltar */
+#link-return-login {
+    text-decoration: none;
+    margin-top: 10px;
+    color: #5d4a94;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#link-return-login:hover {
+    color: #7e65c9;
+}
+
+/* setinha do link */
+.bx-left-arrow-alt {
+    font-size: 25px;
+}
+
+/* media queires */
+@media (max-width: 491px) {
+    .signup-container {
+        width: 90%;
+        animation: none;
+    }
+
+    .title-content {
+        width: 90%;
+    }
+
+    .inputs-signup-container {
+        width: 100%;
+    }
+
+    .text-user-container {
+        width: 100%;
+    }
+
+    #bnt-submit-signup {
+        width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    .signup-container {
+        width: 90%;
+        animation: none;
+    }
+
+    .title-content {
+        width: 90%;
+        margin-left: 30px;
+    }
+
+    .inputs-signup-container {
+        margin-left: 30px;
+        width: 80%;
+    }
+}
