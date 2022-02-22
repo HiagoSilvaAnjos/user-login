@@ -94,6 +94,10 @@ input {
     border: 2px solid #131215; 
 }
 
+#name:focus {
+    border: 2px solid #7c58da;
+}
+
 /* iconi do input name */
 #input-name {
     position: relative;
@@ -117,6 +121,10 @@ input {
     padding: 15px 40px 15px 40px;
     background-color: #131215;
     border: 2px solid #131215; 
+}
+
+#password:focus {
+    border: 2px solid #7c58da;
 }
 
 /* iconis do input password */
@@ -151,6 +159,10 @@ input {
     padding: 15px 40px 15px 40px;
     background-color: #131215;
     border: 2px solid #131215;
+}
+
+#confirm-password:focus {
+    border: 2px solid #7c58da;
 }
 
 /* iconis do input confirm password*/
