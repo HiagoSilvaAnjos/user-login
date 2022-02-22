@@ -6,6 +6,28 @@ const iconShowPassword = document.querySelector('#icon-hide');
 const iconShowPasswordConfirm = document.querySelector('#icon-hide-password-confirm');
 const bntSubmitSignup = document.querySelector('#bnt-submit-signup');
 
+// Validar todos os inputs
+let validateEmail = () => userEmailElement.value.trim().length > 0;
+let validNameUser = () => userNameElement.value.trim().length > 0;
+let validPassword = () => userPasswordElement.value.trim().length > 0;
+let validConfirmPassword = () => userConfirmPassword.value.trim().length > 0;
+
+// Validar os dados do usuário
+const validateUserdata = () => {
+    
+    inputs = validateEmail() && validNameUser() && validPassword() && validConfirmPassword();
+
+    if (!inputs) {
+        return inValidInputs()
+    } 
+    
+}
+
+// Todos os inputs vazios...
+const inValidInputs = () => {
+    alert('ta tudo vazio ai')
+}
+
 // Adicionar cor ao iconi dos inputs
 
 // input email
@@ -111,11 +133,6 @@ const showPasswordConfirm = (iconShowPasswordConfirm) => {
         turnInputConfirm = true;
     }
 
-}
-
-// Validar os dados do usuário
-const validateUserdata = () => {
-    alert('Funcionalidade em construção...')
 }
 
 iconShowPassword.addEventListener('click', () => showPassword(iconShowPassword));
