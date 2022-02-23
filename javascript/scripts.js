@@ -110,9 +110,6 @@ const showPopup = () => {
     popupElement.style.display = 'block';
 
     setTimeout(hiddePopup, 5000);
-    function hiddePopup() {
-        popupElement.style.display = 'none';
-    }
 
 }
 
