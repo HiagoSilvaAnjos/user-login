@@ -13,89 +13,27 @@ const messageErrorConfirmPassword = document.querySelector('#mensagem-error-conf
 const allSpans = document.getElementsByClassName('spans-error');
 
 // Saber se os inputs estão vazios
-let validateEmail = () => userEmailElement.value.trim().length > 0;
+let validateEmailSize = () => userEmailElement.value.trim().length > 0;
 let validNameUser = () => userNameElement.value.trim().length > 0;
 let validPassword = () => userPasswordElement.value.trim().length > 0;
 let validConfirmPassword = () => userConfirmPassword.value.trim().length > 0;
 
-// Validar os dados do usuário
-const validateUserdata = () => {
-    const email = validateEmail();
-    const userName = validNameUser();
-    const password = validPassword();
-    const confirmedPassword = validConfirmPassword();
-    const inputs = validateEmail() || validNameUser() || validPassword() || validConfirmPassword();
+// saber se o email é valido
+let validEmail = () => {
+    let validationEmail  = /\S+@\S+\.\S+/;
+    let thisEmail = validationEmail.test(userEmailElement.value);
 
-    if (!inputs) {
-        return inValidInputs()
-    } 
-
-    if (!email) {
-        return inValidEmail()
-    } 
-
-    if (!userName) {
-        return inValidName()
-    }
-
-    if (!password) {
-        return inValidPassword()
-    }
-
-    if (!confirmedPassword) {
-        return inValidConfirmPassword()
-    }
-
-    alert('Cadastrado com sucesso')
-    
+    return thisEmail
 }
 
-// Todos os inputs vazios...
-const inValidInputs = () => {
-
-    for (i of allSpans) {
-        i.style.display = 'inline-block';
-    }
-
-    messageErrorEmail.innerText = 'E-mail é obrigatório';
-    messageErrorName.innerText = 'Nome é obrigatório';
-    messageErrorPassword.innerText = 'Senha é obrigatório';
-    messageErrorConfirmPassword.innerText = 'Confirmação de senha é obrigatório';
-
-    // sumir mensagem de error
-    setTimeout(function() {
-        for (i of allSpans) {
-            i.style.display = 'none';
-        }
-    }, 5000)
-}
-
-// input email vazio
-const inValidEmail = () => {
-    messageErrorEmail.style.display = "inline-block"
-    messageErrorEmail.innerText = 'E-mail é obrigatório';
-}
-
-// input nome vazio
-const inValidName = () => {
-    messageErrorName.style.display = "inline-block"
-    messageErrorName.innerText = 'Nome é obrigatório';
-}
-
-// input password vazio
-const inValidPassword = () => {
-    messageErrorPassword.style.display = "inline-block"
-    messageErrorPassword.innerText = 'Senha é obrigatório';
-}
-
-// input comfirmar password vazio
-const inValidConfirmPassword = () => {
-    messageErrorConfirmPassword.style.display = "inline-block"
-    messageErrorConfirmPassword.innerText = 'Confirmação de senha é obrigatório';
+// saber se o nome é valido
+let validName = () => {    
+    let validationName  = /[A-z][ ][A-z]/;
+    let thisName = validationName.test(userNameElement.value);
+    return thisName
 }
 
 // Adicionar cor ao iconi dos inputs
-
 // input email
 const changeIconColorEmail = () => {
     const iconEmail = document.querySelector('.bxs-envelope');
@@ -209,6 +147,105 @@ const showPasswordConfirm = (iconShowPasswordConfirm) => {
         turnInputConfirm = true;
     }
 
+}
+
+// Validar os dados do usuário
+const validateUserdata = () => {
+    const email = validateEmailSize();
+    const userName = validNameUser();
+    const password = validPassword();
+    const confirmedPassword = validConfirmPassword();
+    const inputs = validateEmailSize() || validNameUser() || validPassword() || validConfirmPassword();
+
+    console.log(validName())
+
+    if (!inputs) {
+        return inValidInputs()
+    } 
+
+    if (!email) {
+        return inValidSizeEmail()
+    } 
+
+    if (!validEmail()) {
+        return inValidEmail()
+    }
+
+    if (!userName) {
+        return inValidSizeName()
+    }
+
+    if (!validName()) {
+        return inValidName()
+    }
+
+    if (!password) {
+        return inValidSizePassword()
+    }
+
+    if (!confirmedPassword) {
+        return inValidConfirmPassword()
+    }
+
+    alert('Cadastrado com sucesso')
+    
+}
+
+// Todos os inputs vazios...
+const inValidInputs = () => {
+
+    for (i of allSpans) {
+        i.style.display = 'inline-block';
+    }
+
+    messageErrorEmail.innerText = 'E-mail é obrigatório';
+    messageErrorName.innerText = 'Nome é obrigatório';
+    messageErrorPassword.innerText = 'Senha é obrigatório';
+    messageErrorConfirmPassword.innerText = 'Confirmação de senha é obrigatório';
+
+    // sumir mensagem de error
+    setTimeout(function() {
+        for (i of allSpans) {
+            i.style.display = 'none';
+        }
+    }, 5000)
+}
+
+// input email vazio
+const inValidSizeEmail = () => {
+    messageErrorEmail.style.display = "inline-block"
+    messageErrorEmail.innerText = 'E-mail é obrigatório';
+}
+
+// input nome vazio
+const inValidSizeName = () => {
+    messageErrorName.style.display = "inline-block"
+    messageErrorName.innerText = 'Nome é obrigatório';
+}
+
+// input password vazio
+const inValidSizePassword = () => {
+    messageErrorPassword.style.display = "inline-block"
+    messageErrorPassword.innerText = 'Senha é obrigatório';
+}
+
+// input comfirmar password vazio
+const inValidConfirmPassword = () => {
+    messageErrorConfirmPassword.style.display = "inline-block"
+    messageErrorConfirmPassword.innerText = 'Confirmação de senha é obrigatório';
+}
+
+// email invalido
+// input email inválido
+const inValidEmail = () => {
+    messageErrorEmail.style.display = "inline-block"
+    messageErrorEmail.innerText = 'Insira um e-mail válido';
+}
+
+// input nome inválido
+const inValidName = () => {
+    messageErrorName.style.display = "inline-block"
+    messageErrorName.innerText = 'Digite seu nome completo';
 }
 
 iconShowPassword.addEventListener('click', () => showPassword(iconShowPassword));
