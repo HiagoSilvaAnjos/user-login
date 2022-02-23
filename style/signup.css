@@ -251,6 +251,49 @@ input {
   font-size: 25px;
 }
 
+/* mensagens de error */
+
+.spans-error {
+  display: none;
+  color: #c91e15;
+  margin-bottom: 10px;
+}
+
+/* popup */
+.popup {
+  display: none;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: green;
+  width: 280px;
+  border-radius: 4px;
+  color: #FFF;
+  padding: 20px;
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  animation: slideResult 1s;
+}
+
+@keyframes slideResult {
+  from {
+      transform: translatex(60px)
+  }
+  to {
+      transform: translatex(0px)
+  }
+}
+
+.popup-close {
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 5px; 
+}
+
+.popup-close:hover {
+  color: #a59fa0;
+}
+
 /* media queires */
 @media (max-width: 491px) {
   .signup-container {
@@ -283,13 +326,4 @@ input {
   .inputs-signup-container {
     width: 90%;
   }
-}
-
-
-/* mensagens de error */
-
-.spans-error {
-  display: none;
-  color: #c91e15;
-  margin-bottom: 10px;
 }

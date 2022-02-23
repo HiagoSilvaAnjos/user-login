@@ -11,12 +11,15 @@ const messageErrorName = document.querySelector('#mensagem-error-name');
 const messageErrorPassword = document.querySelector('#mensagem-error-password');
 const messageErrorConfirmPassword = document.querySelector('#mensagem-error-confirm-password');
 const allSpans = document.getElementsByClassName('spans-error');
+// popup
+const popupElement = document.querySelector('.popup');
+const popupCloseElement = document.querySelector('.popup-close');
 
 // Saber se os inputs estão vazios
 let validateEmailSize = () => userEmailElement.value.trim().length > 0;
-let validNameUser = () => userNameElement.value.trim().length > 0;
-let validPassword = () => userPasswordElement.value.trim().length > 0;
-let validConfirmPassword = () => userConfirmPassword.value.trim().length > 0;
+let validSizeNameUser = () => userNameElement.value.trim().length > 0;
+let validSizePassword = () => userPasswordElement.value.trim().length > 0;
+let validSizeConfirmPassword = () => userConfirmPassword.value.trim().length > 0;
 
 // saber se o email é valido
 let validEmail = () => {
@@ -31,6 +34,25 @@ let validName = () => {
     let validationName  = /[A-z][ ][A-z]/;
     let thisName = validationName.test(userNameElement.value);
     return thisName
+}
+
+// saber se a senha é tem mais de 4 caracteres
+let passwordGreaterThanFour = () => {
+    let validationPassword = () => userPasswordElement.value.trim().length >= 4;
+
+    let password = validationPassword();
+
+    return password
+
+}
+
+// confirmar se as senhas são iguais
+let identicalPassword = () => {
+    let typedPassword = userPasswordElement.value;
+    let confirmTypedPassword = userConfirmPassword.value;
+
+    let identical = typedPassword === confirmTypedPassword;
+    return identical
 }
 
 // Adicionar cor ao iconi dos inputs
@@ -152,12 +174,10 @@ const showPasswordConfirm = (iconShowPasswordConfirm) => {
 // Validar os dados do usuário
 const validateUserdata = () => {
     const email = validateEmailSize();
-    const userName = validNameUser();
-    const password = validPassword();
-    const confirmedPassword = validConfirmPassword();
-    const inputs = validateEmailSize() || validNameUser() || validPassword() || validConfirmPassword();
-
-    console.log(validName())
+    const userName = validSizeNameUser();
+    const password = validSizePassword();
+    const confirmedPassword = validSizeConfirmPassword();
+    const inputs = validateEmailSize() || validSizeNameUser() || validSizePassword() || validSizeConfirmPassword();
 
     if (!inputs) {
         return inValidInputs()
@@ -183,11 +203,19 @@ const validateUserdata = () => {
         return inValidSizePassword()
     }
 
-    if (!confirmedPassword) {
-        return inValidConfirmPassword()
+    if (!passwordGreaterThanFour()) {
+        return inValidPassword()
     }
 
-    alert('Cadastrado com sucesso')
+    if (!confirmedPassword) {
+        return inValidSizeConfirmPassword()
+    }
+
+    if (!identicalPassword()) {
+        return inValidConfirmPassword();
+    }
+
+    showPopup();
     
 }
 
@@ -230,7 +258,7 @@ const inValidSizePassword = () => {
 }
 
 // input comfirmar password vazio
-const inValidConfirmPassword = () => {
+const inValidSizeConfirmPassword = () => {
     messageErrorConfirmPassword.style.display = "inline-block"
     messageErrorConfirmPassword.innerText = 'Confirmação de senha é obrigatório';
 }
@@ -248,6 +276,31 @@ const inValidName = () => {
     messageErrorName.innerText = 'Digite seu nome completo';
 }
 
+// input password inválido
+const inValidPassword = () => {
+    messageErrorPassword.style.display = "inline-block"
+    messageErrorPassword.innerText = 'Senha deve ter no mínimo 4 caracteres';
+}
+
+// input confirmar password inválido
+const inValidConfirmPassword = () => {
+    messageErrorConfirmPassword.style.display = "inline-block"
+    messageErrorConfirmPassword.innerText = 'Senhas não conferem.';
+}
+
+// Mostrar popup e fechar popup
+const showPopup = () => {
+    popupElement.style.display = 'block';
+
+    setTimeout(hiddePopup, 5000);
+
+}
+
+const hiddePopup = () => {
+    popupElement.style.display = 'none';
+}
+
 iconShowPassword.addEventListener('click', () => showPassword(iconShowPassword));
 iconShowPasswordConfirm.addEventListener('click', () => showPasswordConfirm(iconShowPasswordConfirm));
 bntSubmitSignup.addEventListener('click', () => validateUserdata());
+popupCloseElement.addEventListener('click', () => hiddePopup());
