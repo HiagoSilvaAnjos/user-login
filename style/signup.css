@@ -284,3 +284,12 @@ input {
     width: 90%;
   }
 }
+
+
+/* mensagens de error */
+
+.spans-error {
+  display: none;
+  color: #c91e15;
+  margin-bottom: 10px;
+}
