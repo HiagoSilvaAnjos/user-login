@@ -5,8 +5,14 @@ const userConfirmPassword = document.querySelector('#confirm-password');
 const iconShowPassword = document.querySelector('#icon-hide');
 const iconShowPasswordConfirm = document.querySelector('#icon-hide-password-confirm');
 const bntSubmitSignup = document.querySelector('#bnt-submit-signup');
+// span
+const messageErrorEmail = document.querySelector('#mensagem-error-email');
+const messageErrorName = document.querySelector('#mensagem-error-name');
+const messageErrorPassword = document.querySelector('#mensagem-error-password');
+const messageErrorConfirmPassword = document.querySelector('#mensagem-error-confirm-password');
+const allSpans = document.getElementsByClassName('spans-error');
 
-// Validar todos os inputs
+// Saber se os inputs estão vazios
 let validateEmail = () => userEmailElement.value.trim().length > 0;
 let validNameUser = () => userNameElement.value.trim().length > 0;
 let validPassword = () => userPasswordElement.value.trim().length > 0;
@@ -14,18 +20,78 @@ let validConfirmPassword = () => userConfirmPassword.value.trim().length > 0;
 
 // Validar os dados do usuário
 const validateUserdata = () => {
-    
-    inputs = validateEmail() && validNameUser() && validPassword() && validConfirmPassword();
+    const email = validateEmail();
+    const userName = validNameUser();
+    const password = validPassword();
+    const confirmedPassword = validConfirmPassword();
+    const inputs = validateEmail() || validNameUser() || validPassword() || validConfirmPassword();
 
     if (!inputs) {
         return inValidInputs()
     } 
+
+    if (!email) {
+        return inValidEmail()
+    } 
+
+    if (!userName) {
+        return inValidName()
+    }
+
+    if (!password) {
+        return inValidPassword()
+    }
+
+    if (!confirmedPassword) {
+        return inValidConfirmPassword()
+    }
+
+    alert('Cadastrado com sucesso')
     
 }
 
 // Todos os inputs vazios...
 const inValidInputs = () => {
-    alert('ta tudo vazio ai')
+
+    for (i of allSpans) {
+        i.style.display = 'inline-block';
+    }
+
+    messageErrorEmail.innerText = 'E-mail é obrigatório';
+    messageErrorName.innerText = 'Nome é obrigatório';
+    messageErrorPassword.innerText = 'Senha é obrigatório';
+    messageErrorConfirmPassword.innerText = 'Confirmação de senha é obrigatório';
+
+    // sumir mensagem de error
+    setTimeout(function() {
+        for (i of allSpans) {
+            i.style.display = 'none';
+        }
+    }, 5000)
+}
+
+// input email vazio
+const inValidEmail = () => {
+    messageErrorEmail.style.display = "inline-block"
+    messageErrorEmail.innerText = 'E-mail é obrigatório';
+}
+
+// input nome vazio
+const inValidName = () => {
+    messageErrorName.style.display = "inline-block"
+    messageErrorName.innerText = 'Nome é obrigatório';
+}
+
+// input password vazio
+const inValidPassword = () => {
+    messageErrorPassword.style.display = "inline-block"
+    messageErrorPassword.innerText = 'Senha é obrigatório';
+}
+
+// input comfirmar password vazio
+const inValidConfirmPassword = () => {
+    messageErrorConfirmPassword.style.display = "inline-block"
+    messageErrorConfirmPassword.innerText = 'Confirmação de senha é obrigatório';
 }
 
 // Adicionar cor ao iconi dos inputs
@@ -58,6 +124,16 @@ userEmailElement.addEventListener('focus', () => changeIconColorEmail());
 userNameElement.addEventListener('focus', () => changeIconColorName());
 userPasswordElement.addEventListener('focus', () => changeIconColorPassword());
 userConfirmPassword.addEventListener('focus', () => changeIconColorConfirmPassword());
+
+// remover erros dos inputs
+userEmailElement.addEventListener('change', () => removeTextErrorInput(messageErrorEmail));
+userNameElement.addEventListener('change', () => removeTextErrorInput(messageErrorName));
+userPasswordElement.addEventListener('change', () => removeTextErrorInput(messageErrorPassword));
+userConfirmPassword.addEventListener('change', () => removeTextErrorInput(messageErrorConfirmPassword));
+
+const removeTextErrorInput = (spanElement) => {
+    spanElement.style.display = "none";
+}
 
 // Remover cor dos iconis dos inputs
 
