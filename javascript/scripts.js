@@ -6,8 +6,8 @@ const showPassword = document.querySelector('.show-password');
 const popupElement = document.querySelector('.popup');
 const popupCloseElement = document.querySelector('.popup-close');
 
-let validateEmail = () => userEmailElement.value.trim().length > 4;
-let validatePassword = () => userPasswordElement.value.trim().length > 4;
+let validateEmail = () => userEmailElement.value.trim().length >= 4;
+let validatePassword = () => userPasswordElement.value.trim().length >= 4;
 
 const validateLogin = (userEmailElement) => {
 
