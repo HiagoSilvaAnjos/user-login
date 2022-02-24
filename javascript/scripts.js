@@ -6,52 +6,11 @@ const showPassword = document.querySelector('.show-password');
 const popupElement = document.querySelector('.popup');
 const popupCloseElement = document.querySelector('.popup-close');
 
+// validar se os inpust estão preenchidos
 let validateEmail = () => userEmailElement.value.trim().length >= 4;
 let validatePassword = () => userPasswordElement.value.trim().length >= 4;
 
-const validateLogin = (userEmailElement) => {
-
-    let validateEmail = /\S+@\S+\.\S+/;
-    let email = validateEmail.test(userEmailElement.value);
-
-    if (email) {
-        emailValid()
-        showPopup();
-    } else {
-        return showMensageError();
-    }
-
-}
-
-// Adicionar mensagem de erro 
-const showMensageError = () => {
-    elementErrorEmail.style.display = "inline-block";
-
-    setTimeout(hiddeError, 5000);
-
-    function hiddeError() {
-        elementErrorEmail.style.display = "none";
-    }
-}
-
-// Validar o botão de ENTRAR
-const relaseButtonSingUp = () => {
-
-    let validEmail = validateEmail() ? true : false;
-    let validPassword = validatePassword() ? true : false;
-
-    if (validEmail && validPassword) {
-        validateLoginBnt.removeAttribute('disabled');
-        validateLoginBnt.classList.add('valid-fields');
-    } else {
-        validateLoginBnt.setAttribute('disabled', 'disabled');
-        validateLoginBnt.classList.remove('valid-fields');
-    }
-
-}
-
 // evento de foco nos íconis dos inputs Email e Password
-
 // Input email
 userEmailElement.addEventListener('focus', () => changeIconColorEmail());
 userEmailElement.addEventListener('blur', () => removeChangeIconColor());
@@ -100,12 +59,43 @@ const viewPassword = (showPassword) => {
 
 }
 
-// Email válido
-const emailValid = () => {
+// Validar o botão de ENTRAR
+const relaseButtonSingUp = () => {
+
+    let validEmail = validateEmail() ? true : false;
+    let validPassword = validatePassword() ? true : false;
+
+    if (validEmail && validPassword) {
+        validateLoginBnt.removeAttribute('disabled');
+        validateLoginBnt.classList.add('valid-fields');
+    } else {
+        validateLoginBnt.setAttribute('disabled', 'disabled');
+        validateLoginBnt.classList.remove('valid-fields');
+    }
+
+}
+
+// validar o email de login ao clicar no botão
+const validateLogin = (userEmailElement) => {
+
+    let validateEmail = /\S+@\S+\.\S+/;
+    let email = validateEmail.test(userEmailElement.value);
+
+    if (email) {
+        removeMenssageError()
+        showPopup();
+    } else {
+        return showMensageError();
+    }
+
+}
+
+// Vai remover a mensagem de error se o email for válido
+const removeMenssageError = () => {
     elementErrorEmail.style.display = "none";
 }
 
-// Mostrar popup e fechar popup
+// Mostrar popup
 const showPopup = () => {
     popupElement.style.display = 'block';
 
@@ -113,8 +103,20 @@ const showPopup = () => {
 
 }
 
+// fechar popup
 const hiddePopup = () => {
     popupElement.style.display = 'none';
+}
+
+// Adicionar mensagem de erro 
+const showMensageError = () => {
+    elementErrorEmail.style.display = "inline-block";
+
+    setTimeout(hiddeError, 5000);
+
+    function hiddeError() {
+        elementErrorEmail.style.display = "none";
+    }
 }
 
 userEmailElement.addEventListener('keyup', () => relaseButtonSingUp());

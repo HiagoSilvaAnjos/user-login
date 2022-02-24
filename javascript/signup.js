@@ -5,12 +5,16 @@ const userConfirmPassword = document.querySelector('#confirm-password');
 const iconShowPassword = document.querySelector('#icon-hide');
 const iconShowPasswordConfirm = document.querySelector('#icon-hide-password-confirm');
 const bntSubmitSignup = document.querySelector('#bnt-submit-signup');
+
 // span
 const messageErrorEmail = document.querySelector('#mensagem-error-email');
 const messageErrorName = document.querySelector('#mensagem-error-name');
 const messageErrorPassword = document.querySelector('#mensagem-error-password');
 const messageErrorConfirmPassword = document.querySelector('#mensagem-error-confirm-password');
+
+// todos os spans com a classe spans-error 
 const allSpans = document.getElementsByClassName('spans-error');
+
 // popup
 const popupElement = document.querySelector('.popup');
 const popupCloseElement = document.querySelector('.popup-close');
@@ -171,7 +175,7 @@ const showPasswordConfirm = (iconShowPasswordConfirm) => {
 
 }
 
-// Validar os dados do usuário
+// Validar os dados do usuário ao clicar no botão
 const validateUserdata = () => {
     const email = validateEmailSize();
     const userName = validSizeNameUser();
@@ -179,6 +183,7 @@ const validateUserdata = () => {
     const confirmedPassword = validSizeConfirmPassword();
     const inputs = validateEmailSize() || validSizeNameUser() || validSizePassword() || validSizeConfirmPassword();
 
+    // validar se os campos estão preenchidos
     if (!inputs) {
         return inValidInputs()
     } 
@@ -187,34 +192,36 @@ const validateUserdata = () => {
         return inValidSizeEmail()
     } 
 
-    if (!validEmail()) {
-        return inValidEmail()
-    }
-
     if (!userName) {
         return inValidSizeName()
-    }
-
-    if (!validName()) {
-        return inValidName()
     }
 
     if (!password) {
         return inValidSizePassword()
     }
 
-    if (!passwordGreaterThanFour()) {
-        return inValidPassword()
-    }
-
     if (!confirmedPassword) {
         return inValidSizeConfirmPassword()
+    }
+
+    // validar os dados preenchidos pelo usuário
+    if (!validEmail()) {
+        return inValidEmail()
+    }
+
+    if (!validName()) {
+        return inValidName()
+    }
+
+    if (!passwordGreaterThanFour()) {
+        return inValidPassword()
     }
 
     if (!identicalPassword()) {
         return inValidConfirmPassword();
     }
 
+    // se os dados estiverem certos o popup é mostrado
     showPopup();
     
 }
@@ -288,7 +295,7 @@ const inValidConfirmPassword = () => {
     messageErrorConfirmPassword.innerText = 'Senhas não conferem.';
 }
 
-// Mostrar popup e fechar popup
+// Mostrar popup 
 const showPopup = () => {
     popupElement.style.display = 'block';
 
@@ -296,6 +303,7 @@ const showPopup = () => {
 
 }
 
+// fechar popup
 const hiddePopup = () => {
     popupElement.style.display = 'none';
 }
