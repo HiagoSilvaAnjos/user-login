@@ -223,6 +223,11 @@ const validateUserdata = () => {
 
     // se os dados estiverem certos o popup é mostrado
     showPopup();
+
+    // Abrir página de login
+    setTimeout(() => {
+        window.location.href = './index.html';
+    }, 5000)
     
 }
 

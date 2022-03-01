@@ -28,6 +28,11 @@ buttonForgut.addEventListener("click", () => {
     if (yourEmail) {
         showPopup();
         mensageErrorElement.style.display = "none";
+
+        setTimeout(() => {
+            window.location.href = './index.html';
+        }, 5000)
+
     } else {
         mensageError();
     }
