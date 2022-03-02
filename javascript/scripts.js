@@ -3,7 +3,7 @@ const userPasswordElement = document.querySelector('#password');
 const elementErrorEmail = document.querySelector('#mensagem-error');
 const validateLoginBnt = document.querySelector('.button-submit-login');
 const showPassword = document.querySelector('.show-password');
-const popupElement = document.querySelector('.popup');
+const popupElement = document.querySelector('#popup');
 const popupCloseElement = document.querySelector('.popup-close');
 
 // validar se os inpust estão preenchidos
@@ -76,18 +76,55 @@ const relaseButtonSingUp = () => {
 }
 
 // validar o email de login ao clicar no botão
-const validateLogin = (userEmailElement) => {
+const validateLogin = () => {
 
     let validateEmail = /\S+@\S+\.\S+/;
     let email = validateEmail.test(userEmailElement.value);
 
     if (email) {
         removeMenssageError()
-        showPopup();
-    } else {
+    }
+
+    if (!email) {
         return showMensageError();
     }
 
+    // Autenticar dados para login
+    let listUser = [];
+
+    let userValid = {
+        email: "",
+        password: ""
+    }
+
+    // Pegar os dados salvos no localStorage da página signup
+    listUser = JSON.parse(localStorage.getItem('listaUser'));
+
+    // se nenhum cadastro for feito na página signup
+    if (listUser === null) {
+        return showPopupError();
+    }
+
+    // validar se os dados castrados então iguais aos digitados
+    listUser.forEach(element => {
+        
+        if (userEmailElement.value == element.email && userPasswordElement.value == element.password) {
+            userValid = {
+                email: element.email,
+                password: element.password
+            }
+        }
+    });
+
+    // Validar email e senha
+    if (userEmailElement.value == userValid.email && userPasswordElement.value == userValid.password) {
+
+        return showPopup();
+
+    } else {
+
+        return showPopupError();
+    }
 }
 
 // Vai remover a mensagem de error se o email for válido
@@ -98,6 +135,28 @@ const removeMenssageError = () => {
 // Mostrar popup
 const showPopup = () => {
     popupElement.style.display = 'block';
+
+    const textPopup = document.getElementById('popup-text');
+
+    textPopup.innerText = "Sucesso!"
+    popupElement.classList.remove('popupError');
+    popupElement.classList.add('popup');
+
+    setTimeout(hiddePopup, 5000);
+
+}
+
+// Mostrar popup de error
+const showPopupError = () => {
+    popupElement.style.display = 'block';
+
+    const textPopup = document.getElementById('popup-text');
+
+    textPopup.innerText = "Usuário ou senha encontrado"
+    popupElement.classList.remove('popup');
+    popupElement.classList.add('popupError');
+
+    userEmailElement.focus();
 
     setTimeout(hiddePopup, 5000);
 
@@ -122,5 +181,5 @@ const showMensageError = () => {
 userEmailElement.addEventListener('keyup', () => relaseButtonSingUp());
 userPasswordElement.addEventListener('keyup', () => relaseButtonSingUp());
 showPassword.addEventListener('click', () => viewPassword(showPassword));
-validateLoginBnt.addEventListener('click', () => validateLogin(userEmailElement));
+validateLoginBnt.addEventListener('click', () => validateLogin());
 popupCloseElement.addEventListener('click', () => hiddePopup());

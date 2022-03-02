@@ -224,6 +224,22 @@ body {
     animation: slideResult 1s;
 }
 
+/* popupError */
+
+.popupError {
+    display: none;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(128, 9, 0);
+    width: 280px;
+    border-radius: 4px;
+    color: #FFF;
+    padding: 20px;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    animation: slideResult 1s;
+}
+
 @keyframes slideResult {
     from {
         transform: translatex(60px)
@@ -262,7 +278,7 @@ body {
 
     .popup {
         width: 90%;
-        top: 100px;
+        top: 70px;
         background-color: rgb(17, 128, 93);
     }
 

@@ -327,7 +327,7 @@ input {
 
 
 /* media queires */
-@media (max-width: 491px) {
+@media (max-width: 500px) {
   .signup-container {
     width: 90%;
     animation: none;

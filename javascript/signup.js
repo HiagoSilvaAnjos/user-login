@@ -188,44 +188,54 @@ const validateUserdata = () => {
 
     // validar se os campos estão preenchidos
     if (!inputs) {
-        return inValidInputs()
+        return inValidInputs();
     }
 
     if (!email) {
-        return inValidSizeEmail()
+        return inValidSizeEmail();
     }
 
     if (!userName) {
-        return inValidSizeName()
+        return inValidSizeName();
     }
 
     if (!password) {
-        return inValidSizePassword()
+        return inValidSizePassword();
     }
 
     if (!confirmedPassword) {
-        return inValidSizeConfirmPassword()
+        return inValidSizeConfirmPassword();
     }
 
     // validar os dados preenchidos pelo usuário
     if (!validEmail()) {
-        return inValidEmail()
+        return inValidEmail();
     }
 
     if (!validName()) {
-        return inValidName()
+        return inValidName();
     }
 
     if (!passwordGreaterThanFour()) {
-        return inValidPassword()
+        return inValidPassword();
     }
 
     if (!identicalPassword()) {
         return inValidConfirmPassword();
     }
 
-    // Validar se o email que o usuário inserio já foi cadastrado
-    testEmailCadastrado()
+    
+    // Salvar dados do usuário no localStorage
+    let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]');
+
+    listaUser.push(
+        {
+        email: userEmailElement.value,
+        password: userPasswordElement.value
+    }
+    )
+
+    localStorage.setItem('listaUser', JSON.stringify(listaUser));    
 
     // se os dados estiverem certos o popup é mostrado
     showPopup();
@@ -236,32 +246,6 @@ const validateUserdata = () => {
     }, 5000)
 
 }
-
-// array com o email cadastrado
-let arrayEmail = [];
-
-// testar se o email já foi cadastrado
-const testEmailCadastrado = () => {
-
-    let emailCadastrado = {
-        emails: userEmailElement.value,
-    };
-
-    return test(arrayEmail, emailCadastrado.emails);
-}
-
-const test = (array, novo) => {
-    if (array.indexOf(novo) === -1) {
-        return array.push(novo);
-
-    } else if (array.indexOf(novo) > -1) {
-
-        alert('Este email já foi cadastrado');
-        return userEmailElement.value = "";
-
-    }
-}
-
 
 // Todos os inputs vazios...
 const inValidInputs = () => {
