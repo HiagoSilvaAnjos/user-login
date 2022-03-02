@@ -211,17 +211,17 @@ body {
 
 /* popup */
 .popup {
-    display: none;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: green;
-    width: 280px;
-    border-radius: 4px;
-    color: #FFF;
-    padding: 20px;
-    position: absolute;
-    top: 50px;
-    right: 20px;
-    animation: slideResult 1s;
+  display: none;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: green;
+  width: 280px;
+  border-radius: 4px;
+  color: #FFF;
+  padding: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  animation: slideResult 1s;
 }
 
 /* popupError */
@@ -235,7 +235,7 @@ body {
     color: #FFF;
     padding: 20px;
     position: absolute;
-    top: 50px;
+    top: 20px;
     right: 20px;
     animation: slideResult 1s;
 }
@@ -259,6 +259,37 @@ body {
 .popup-close:hover {
     color: #a59fa0;
 }
+
+/* loading */
+.loader {
+    margin-left: 10px;
+    border: 3px solid #e5ece9b7;
+    border-radius: 50%;
+    border-top: 3px solid #48377c;
+    width: 20px;
+    height: 20px;
+    -webkit-animation: spin 0.3s linear infinite; /* Safari */
+    animation: spin 0.3s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 
 /* Media queires */
 @media (max-width: 620px) {

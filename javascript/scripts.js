@@ -3,7 +3,7 @@ const userPasswordElement = document.querySelector('#password');
 const elementErrorEmail = document.querySelector('#mensagem-error');
 const validateLoginBnt = document.querySelector('.button-submit-login');
 const showPassword = document.querySelector('.show-password');
-const popupElement = document.querySelector('#popup');
+const popupElement = document.querySelector('.popup');
 const popupCloseElement = document.querySelector('.popup-close');
 
 // validar se os inpust estão preenchidos
@@ -107,7 +107,7 @@ const validateLogin = () => {
 
     // validar se os dados castrados então iguais aos digitados
     listUser.forEach(element => {
-        
+
         if (userEmailElement.value == element.email && userPasswordElement.value == element.password) {
             userValid = {
                 email: element.email,
@@ -119,8 +119,12 @@ const validateLogin = () => {
     // Validar email e senha
     if (userEmailElement.value == userValid.email && userPasswordElement.value == userValid.password) {
 
-        return showPopup();
-
+        showPopup();
+   
+        setTimeout(() => {
+            window.location.href = './main.html';
+        }, 5000)
+      
     } else {
 
         return showPopupError();
@@ -134,11 +138,13 @@ const removeMenssageError = () => {
 
 // Mostrar popup
 const showPopup = () => {
-    popupElement.style.display = 'block';
-
+    const loading = document.getElementById('loading');
     const textPopup = document.getElementById('popup-text');
 
-    textPopup.innerText = "Sucesso!"
+    loading.style.display = 'block';
+    popupElement.style.display = 'flex';
+
+    textPopup.innerText = "Agurde..."
     popupElement.classList.remove('popupError');
     popupElement.classList.add('popup');
 
@@ -148,9 +154,11 @@ const showPopup = () => {
 
 // Mostrar popup de error
 const showPopupError = () => {
-    popupElement.style.display = 'block';
-
     const textPopup = document.getElementById('popup-text');
+    const loading = document.getElementById('loading');
+
+    loading.style.display = 'none';
+    popupElement.style.display = 'block';
 
     textPopup.innerText = "Usuário ou senha encontrado"
     popupElement.classList.remove('popup');
