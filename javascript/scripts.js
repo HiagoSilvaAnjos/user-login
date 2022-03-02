@@ -94,7 +94,8 @@ const validateLogin = () => {
 
     let userValid = {
         email: "",
-        password: ""
+        password: "",
+        userName: ""
     }
 
     // Pegar os dados salvos no localStorage da página signup
@@ -111,7 +112,8 @@ const validateLogin = () => {
         if (userEmailElement.value == element.email && userPasswordElement.value == element.password) {
             userValid = {
                 email: element.email,
-                password: element.password
+                password: element.password,
+                userName: element.userName
             }
         }
     });
@@ -120,13 +122,22 @@ const validateLogin = () => {
     if (userEmailElement.value == userValid.email && userPasswordElement.value == userValid.password) {
 
         showPopup();
-   
+
+        // Criando um token para o usuário
+        let token = Math.random().toString(16).substring(2) +  Math.random().toString(16).substring();
+
+        // salvar token no localStorage
+        localStorage.setItem('token', token);
+
+        // Salvar no localStorage a autenticação do usuário
+        localStorage.setItem('userLogin', JSON.stringify(userValid));
+
+        // abrir a pagina main
         setTimeout(() => {
             window.location.href = './main.html';
         }, 5000)
       
     } else {
-
         return showPopupError();
     }
 }

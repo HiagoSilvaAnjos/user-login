@@ -231,7 +231,8 @@ const validateUserdata = () => {
     listaUser.push(
         {
         email: userEmailElement.value,
-        password: userPasswordElement.value
+        password: userPasswordElement.value,
+        userName: userNameElement.value
     }
     )
 
