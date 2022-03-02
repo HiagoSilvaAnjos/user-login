@@ -260,6 +260,12 @@ body {
         width: 100%;
     }
 
+    .popup {
+        width: 90%;
+        top: 100px;
+        background-color: rgb(17, 128, 93);
+    }
+
 }
 
 @media (max-width: 420px) {
@@ -279,6 +285,8 @@ body {
         margin-left: 50px;
         word-break: break-word;
     }
+
+    
 }
 
 @media (max-width: 300px) {

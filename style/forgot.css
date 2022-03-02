@@ -194,6 +194,12 @@ body {
     .button-forgot {
         max-width: 320px;;
     }
+
+    .popup {
+        width: 90%;
+        top: 260px;
+        background-color: rgb(17, 128, 93);
+    }
 }
 
 @media (max-width: 300px) {

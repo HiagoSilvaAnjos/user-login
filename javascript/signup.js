@@ -302,7 +302,7 @@ const inValidConfirmPassword = () => {
 
 // Mostrar popup 
 const showPopup = () => {
-    popupElement.style.display = 'block';
+    popupElement.style.display = 'flex';
 
     setTimeout(hiddePopup, 5000);
 
