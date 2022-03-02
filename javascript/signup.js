@@ -27,15 +27,15 @@ let validSizeConfirmPassword = () => userConfirmPassword.value.trim().length > 0
 
 // saber se o email é valido
 let validEmail = () => {
-    let validationEmail  = /\S+@\S+\.\S+/;
+    let validationEmail = /\S+@\S+\.\S+/;
     let thisEmail = validationEmail.test(userEmailElement.value);
 
     return thisEmail
 }
 
 // saber se o nome é valido
-let validName = () => {    
-    let validationName  = /[A-z][ ][A-z]/;
+let validName = () => {
+    let validationName = /[A-z][ ][A-z]/;
     let thisName = validationName.test(userNameElement.value);
     return thisName
 }
@@ -175,6 +175,9 @@ const showPasswordConfirm = (iconShowPasswordConfirm) => {
 
 }
 
+
+
+
 // Validar os dados do usuário ao clicar no botão
 const validateUserdata = () => {
     const email = validateEmailSize();
@@ -186,11 +189,11 @@ const validateUserdata = () => {
     // validar se os campos estão preenchidos
     if (!inputs) {
         return inValidInputs()
-    } 
+    }
 
     if (!email) {
         return inValidSizeEmail()
-    } 
+    }
 
     if (!userName) {
         return inValidSizeName()
@@ -221,6 +224,9 @@ const validateUserdata = () => {
         return inValidConfirmPassword();
     }
 
+    // Validar se o email que o usuário inserio já foi cadastrado
+    testEmailCadastrado()
+
     // se os dados estiverem certos o popup é mostrado
     showPopup();
 
@@ -228,8 +234,34 @@ const validateUserdata = () => {
     setTimeout(() => {
         window.location.href = './index.html';
     }, 5000)
-    
+
 }
+
+// array com o email cadastrado
+let arrayEmail = [];
+
+// testar se o email já foi cadastrado
+const testEmailCadastrado = () => {
+
+    let emailCadastrado = {
+        emails: userEmailElement.value,
+    };
+
+    return test(arrayEmail, emailCadastrado.emails);
+}
+
+const test = (array, novo) => {
+    if (array.indexOf(novo) === -1) {
+        return array.push(novo);
+
+    } else if (array.indexOf(novo) > -1) {
+
+        alert('Este email já foi cadastrado');
+        return userEmailElement.value = "";
+
+    }
+}
+
 
 // Todos os inputs vazios...
 const inValidInputs = () => {
@@ -244,7 +276,7 @@ const inValidInputs = () => {
     messageErrorConfirmPassword.innerText = 'Confirmação de senha é obrigatório';
 
     // sumir mensagem de error
-    setTimeout(function() {
+    setTimeout(function () {
         for (i of allSpans) {
             i.style.display = 'none';
         }
