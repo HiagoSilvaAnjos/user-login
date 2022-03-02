@@ -171,7 +171,7 @@ const showPopupError = () => {
     loading.style.display = 'none';
     popupElement.style.display = 'block';
 
-    textPopup.innerText = "Usuário ou senha encontrado"
+    textPopup.innerText = "Usuário ou senha incorretos"
     popupElement.classList.remove('popup');
     popupElement.classList.add('popupError');
 
