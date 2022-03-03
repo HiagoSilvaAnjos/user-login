@@ -236,7 +236,7 @@ const validateUserdata = () => {
     }
     )
 
-    localStorage.setItem('listaUser', JSON.stringify(listaUser));    
+    localStorage.setItem('listaUser', JSON.stringify(listaUser)); 
 
     // se os dados estiverem certos o popup é mostrado
     showPopup();
