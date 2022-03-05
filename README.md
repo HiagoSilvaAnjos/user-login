@@ -112,8 +112,7 @@
 - [x] Se o campo Nome estiver vazio aparece uma mensagem de error.
 - [x] Se o campo Senha estiver vazio aparece uma mensagem de error.
 - [x] Se o campo Comfirmar senha estiver vazio aparece uma mensagem de error.
-- [x] Vizualizar Senha
-    - [x] Ao clicar no íconi de olho, sua senha digitada será mostrada.
+- [x] Ao clicar no íconi de olho, sua senha digitada será mostrada.
 - [x] Se todos os campos estiverem certos, a sua conta será salva e você poderá logar
 </div>
 
