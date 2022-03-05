@@ -106,7 +106,7 @@
 <h3>Funcionalidades tela Criar Conta:</h3>
 
 - [x] Validação dos campos
-    - [x] Ao clicar no botão se todos os campos.estiverem vazios, uma mensagem de error aparece abaixo dos campos.
+- [x] Ao clicar no botão se todos os campos estiverem vazios, uma mensagem de error aparece abaixo dos campos.
 - [x] Ao focar nos campos os íconis mudam de cor
 - [x] Se o campo email estiver vazio aparece uma mensagem de error.
 - [x] Se o campo Nome estiver vazio aparece uma mensagem de error.
