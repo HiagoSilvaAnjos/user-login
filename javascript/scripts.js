@@ -155,7 +155,7 @@ const showPopup = () => {
     loading.style.display = 'block';
     popupElement.style.display = 'flex';
 
-    textPopup.innerText = "Agurde..."
+    textPopup.innerText = "Aguarde..."
     popupElement.classList.remove('popupError');
     popupElement.classList.add('popup');
 
