@@ -189,35 +189,43 @@ const validateUserdata = () => {
     }
 
     if (!email) {
+        userEmailElement.focus();
         return inValidSizeEmail();
     }
 
     if (!userName) {
+        userNameElement.focus();
         return inValidSizeName();
     }
 
     if (!password) {
+        userPasswordElement.focus();
         return inValidSizePassword();
     }
 
     if (!confirmedPassword) {
+        userConfirmPassword.focus();
         return inValidSizeConfirmPassword();
     }
 
     // validar os dados preenchidos pelo usuário
     if (!validEmail()) {
+        userEmailElement.focus();
         return inValidEmail();
     }
 
     if (!validName()) {
+        userNameElement.focus();
         return inValidName();
     }
 
     if (!passwordGreaterThanFour()) {
+        userPasswordElement.focus();
         return inValidPassword();
     }
 
     if (!identicalPassword()) {
+        userConfirmPassword.focus();
         return inValidConfirmPassword();
     }
 
