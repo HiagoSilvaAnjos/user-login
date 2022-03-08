@@ -175,9 +175,6 @@ const showPasswordConfirm = (iconShowPasswordConfirm) => {
 
 }
 
-
-
-
 // Validar os dados do usuário ao clicar no botão
 const validateUserdata = () => {
     const email = validateEmailSize();
@@ -224,7 +221,18 @@ const validateUserdata = () => {
         return inValidConfirmPassword();
     }
 
+    // verificar se o email digitado já foi cadastrado
+    let emailIsUsed = JSON.parse(localStorage.getItem('listaUser') || 'null')
     
+    if (emailIsUsed != null) {
+
+        for (let i of emailIsUsed) {
+            if(i.email == userEmailElement.value) {
+                return showPopupError();
+            }
+        }
+    }   
+
     // Salvar dados do usuário no localStorage
     let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]');
 
@@ -319,7 +327,38 @@ const inValidConfirmPassword = () => {
 
 // Mostrar popup 
 const showPopup = () => {
+    const loading = document.getElementById('loading');
+    const textPopup = document.getElementById('popup-text');
+
+    loading.style.display = 'block';
     popupElement.style.display = 'flex';
+
+    textPopup.innerText = "Cadastrando usuário"
+    popupElement.classList.remove('popupError');
+    popupElement.classList.add('popup');
+
+    setTimeout(hiddePopup, 5000);
+
+}
+
+
+// Mostrar popup de error
+const showPopupError = () => {
+    const textPopup = document.getElementById('popup-text');
+    console.log(textPopup);
+
+    const loading = document.getElementById('loading');
+    console.log(loading);
+
+    loading.style.display = 'none';
+    popupElement.style.display = 'block';
+
+    textPopup.innerText = "E-mail já cadastrado!"
+    popupElement.classList.remove('popup');
+    popupElement.classList.add('popupError');
+
+    userEmailElement.value = "";
+    userEmailElement.focus();
 
     setTimeout(hiddePopup, 5000);
 
