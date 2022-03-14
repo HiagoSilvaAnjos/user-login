@@ -126,4 +126,3 @@
 - [x] HTML
 - [x] CSS
 - [x] JavaScript
-
