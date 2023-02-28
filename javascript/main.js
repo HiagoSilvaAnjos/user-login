@@ -9,8 +9,6 @@ if (localStorage.getItem('token') == null) {
     title.innerHTML = `Olá ${userLogin.userName}`;
 }
 
-
-
 function logout() {
 
     localStorage.removeItem('token');
