@@ -33,12 +33,12 @@
 </p>
 <p>
     Esse projeto está super legal e bem completo, contendo bastante interação com JavaScript. <br>
-    O usuário Poderá criar sua conta e realmente logar na plataforma passando seus dados de forma correta.
+    O usuário Poderá criar sua conta e logar na plataforma passando seus dados de forma correta.
     <br>
     <br>
-    Meu objetivo com esse projeto era me desafiar e criar um projeto realmente do zero, aplicando tudo que aprendi até o momento sobre JavaScript, para realmente fixar meus conhecimentos e provar para mim mesmo que eu realmente sei programar. <br>
+    Meu objetivo com esse projeto era me desafiar e criar um projeto realmente do zero, aplicando tudo que aprendi até o momento sobre JavaScript, para fixar meus conhecimentos.<br>
     <br>
-    Aprendi demais durante o desenvolvimento do projeto, tive várias dúvidas respondidas, aprendi a criar funcionalidades, consegui resolver muitos bugs e tive que pesquisar para entender a cause de algun erro. <br>
+    Aprendi demais durante o desenvolvimento do projeto, tive várias dúvidas respondidas, aprendi a criar funcionalidades, consegui resolver muitos bugs e tive que pesquisar para entender a causa de erros. <br>
     Esse projeto ficou show demais!
 </p>
 <p>Veja este projeto <a href="https://hiagosilvaanjos.github.io/user-login">clicando aqui</a></p>
