@@ -17,7 +17,7 @@
         <div class="title">
             <h1>Faça seu login na plataforma</h1>
         </div>
-        
+
         <!-- Conteudo do formulário -->
         <div class="login-content">
 
@@ -25,24 +25,26 @@
             <div class="box-inputs">
 
                 <!-- campo email -->
-                    <div class="input-email-container">
-                        <form action="" autocomplete="on">
-                            <span class="enveloper-icon">
-                                <i id="icon-email" class='bx bxs-envelope'></i>
-                            </span>
-                            <input type="email" name="you-email" id="email" placeholder="E-mail" autocomplete="on" autofocus>
-                        </form>
-                    </div>
-                    <!-- mensagem erro emails -->
-                    <span id="mensagem-error">Insira um e-mail válido</span>
-                    <!-- campo senha -->
-                    <div class="input-password-container">
+                <div>
+                    <form class="input-style-container">
+                        <span class="enveloper-icon">
+                            <i id="icon-email" class='bx bxs-envelope'></i>
+                        </span>
+                        <input class="paddingEmail" type="email" name="you-email" id="email" placeholder="E-mail"autofocus>
+                    </form>
+                </div>
+                <!-- mensagem erro emails -->
+                <span id="mensagem-error">Insira um e-mail válido</span>
+                <!-- campo senha -->
+                <div>
+                    <form class="input-style-container">
                         <span class="lock-icon">
                             <i id="icon-password" class='bx bxs-lock-alt'></i>
                         </span>
-                        <input type="password" name="you-password" id="password" placeholder="Senha" autocomplete>
+                        <input class="paddingPassword" type="password" id="password" placeholder="Senha">
                         <span class="show-password"><i class='bx bxs-show'></i></span>
-                    </div>
+                    </form>
+                </div>
             </div>
 
             <!-- Enviar e redefinir senha -->
@@ -58,15 +60,15 @@
     </div>
 
     <!-- popup -->
-        <div class="popup">
-            <div class="popup-close">
-                X
-            </div>
-            <div class="popup-content">
-                <p id="popup-text"></p>
-            </div>
-            <div id="loading" class="loader"></div>
+    <div class="popup">
+        <div class="popup-close">
+            X
         </div>
+        <div class="popup-content">
+            <p id="popup-text"></p>
+        </div>
+        <div id="loading" class="loader"></div>
+    </div>
 
     <script src="./javascript/scripts.js"></script>
 </body>
