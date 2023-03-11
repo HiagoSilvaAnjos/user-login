@@ -98,9 +98,7 @@ const validateLogin = () => {
     listUser = JSON.parse(localStorage.getItem('listaUser'));
 
     // se nenhum cadastro for feito na página signup
-    if (listUser === null) {
-        return showPopupError();
-    }
+    if (listUser === null) return showPopupError();
 
     // validar se os dados castrados então iguais aos digitados
     listUser.forEach(element => {
