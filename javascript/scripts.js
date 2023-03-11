@@ -62,8 +62,8 @@ const viewPassword = (showPassword) => {
 // Validar o botão de ENTRAR
 const relaseButtonSingUp = () => {
 
-    let validEmail = validateEmail() ? true : false;
-    let validPassword = validatePassword() ? true : false;
+    let validEmail = validateEmail();
+    let validPassword = validatePassword();
 
     if (validEmail && validPassword) {
         validateLoginBnt.removeAttribute('disabled');
@@ -81,13 +81,9 @@ const validateLogin = () => {
     let validateEmail = /\S+@\S+\.\S+/;
     let email = validateEmail.test(userEmailElement.value);
 
-    if (email) {
-        removeMenssageError()
-    }
+    if (email) removeMenssageError();
 
-    if (!email) {
-        return showMensageError();
-    }
+    if (!email) return showMensageError();
 
     // Autenticar dados para login
     let listUser = [];
@@ -124,7 +120,7 @@ const validateLogin = () => {
         showPopup();
 
         // Criando um token para o usuário
-        let token = Math.random().toString(16).substring(2) +  Math.random().toString(16).substring();
+        let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring();
 
         // salvar token no localStorage
         localStorage.setItem('token', token);
@@ -136,16 +132,14 @@ const validateLogin = () => {
         setTimeout(() => {
             window.location.href = './main.html';
         }, 5000)
-      
+
     } else {
         return showPopupError();
     }
 }
 
 // Vai remover a mensagem de error se o email for válido
-const removeMenssageError = () => {
-    elementErrorEmail.style.display = "none";
-}
+const removeMenssageError = () => elementErrorEmail.style.display = "none";
 
 // Mostrar popup
 const showPopup = () => {
@@ -182,9 +176,7 @@ const showPopupError = () => {
 }
 
 // fechar popup
-const hiddePopup = () => {
-    popupElement.style.display = 'none';
-}
+const hiddePopup = () => popupElement.style.display = 'none';
 
 // Adicionar mensagem de erro 
 const showMensageError = () => {
